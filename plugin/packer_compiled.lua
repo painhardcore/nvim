@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
   },
+  ["vim-rhubarb"] = {
+    loaded = true,
+    path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+    url = "https://github.com/tpope/vim-rhubarb"
+  },
   ["vim-signify"] = {
     loaded = true,
     path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-signify",

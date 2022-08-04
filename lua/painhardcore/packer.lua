@@ -17,4 +17,5 @@ return require('packer').startup(function()
   -- git 
   use 'mhinz/vim-signify'
   use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb'
  end)
