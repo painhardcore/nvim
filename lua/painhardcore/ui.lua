@@ -5,4 +5,3 @@ require('lualine').setup {
     -- ... your lualine config
   }
 }
-vim.g.go_highlight_function_calls = 1
