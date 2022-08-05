@@ -18,4 +18,7 @@ return require('packer').startup(function()
   use 'mhinz/vim-signify'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
+  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/nvim-cmp'
  end)
