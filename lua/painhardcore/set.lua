@@ -40,6 +40,7 @@ vim.opt.updatetime = 50
 -- vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
--- enable bufferline
-require("bufferline").setup{}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+
+
 
