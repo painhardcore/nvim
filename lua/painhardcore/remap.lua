@@ -8,19 +8,32 @@ nnoremap("<Leader>b",require('telescope').extensions.file_browser.file_browser)
 nnoremap("<Leader>t",require('telescope.builtin').treesitter)
 nnoremap("<Leader>f", require('telescope.builtin').find_files)
 nnoremap("<Leader>g", require('telescope.builtin').live_grep)
-nnoremap("<Leader>b", require('telescope.builtin').buffers)
+nnoremap("<Leader>bb", require('telescope.builtin').buffers)
+-- splits
+nnoremap("<Leader>w", "<C-w>k")
+nnoremap("<Leader>a", "<C-w>h")
+nnoremap("<Leader>s", "<C-w>j")
+nnoremap("<Leader>d", "<C-w>l")
 -- buffers
+nnoremap("<Leader>j", ":bprevious<CR>", { silent = true })
+nnoremap("<Leader>k", ":bnext<CR>", { silent = true })
+nnoremap("<Leader>q", ":bprevious<CR>:bdelete #<CR>", { silent = true })
 
-nnoremap("]b", "<cmd>BufferLineCycleNext<CR>", { silent = true })
-nnoremap("[b", "<cmd>BufferLineCyclePrev<CR>", { silent = true })
-nnoremap("<Leader>bp", "<cmd>BufferLinePick<CR>", { silent = true })
-nnoremap("<Leader>bc", "<cmd>BufferLinePickClose<CR>", { silent = true })
-nnoremap("<Leader>bd", "<cmd>bd<CR>")
+
 -- Dashboard
 nnoremap("<Leader>n", ":DashboardNewFile<CR>", { silent = true })
 
 -- Misc
+-- unbound space because it's mine <leader>
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+-- copy the whole file
+nnoremap("<Leader>y", ":%y<CR>")
+-- open the terminal and turn to the normal mode
+nnoremap("<Leader>l", ":vsplit term://zsh <CR>", { silent = true })
+-- escape in the terminal split
+vim.keymap.set("t", "<Leader><Esc>", "<C-\\><C-n>", { silent = true })
+-- comment one line or whole selection
 nnoremap("<Leader>c", ":Commentary<CR>", { silent = true })
 vnoremap("<Leader>c", ":Commentary<CR>", { silent = true })
-
+-- tooggle to see if pointer to the problem spot is annoying
 nnoremap("<Leader>x", require("lsp_lines").toggle)
