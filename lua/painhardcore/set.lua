@@ -37,7 +37,7 @@ vim.opt.cmdheight = 1
 vim.opt.updatetime = 50
 
 
--- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
 vim.g.mapleader = " "
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
@@ -52,3 +52,5 @@ vim.api.nvim_create_autocmd("InsertEnter", { command = "set norelativenumber", p
 vim.api.nvim_create_autocmd("InsertLeave", { command = "set relativenumber", pattern = "*" })
 vim.api.nvim_create_autocmd("TermOpen", { command = "startinsert", pattern = "*" })
 vim.api.nvim_create_autocmd("BufWinEnter", { command = "set noexpandtab tabstop=2 shiftwidth=2", pattern = "*.rs" })
+
+
