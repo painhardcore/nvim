@@ -1,5 +1,5 @@
 vim.opt.guicursor = ""
-
+vim.opt.mouse = "a"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -53,4 +53,5 @@ vim.api.nvim_create_autocmd("InsertLeave", { command = "set relativenumber", pat
 vim.api.nvim_create_autocmd("TermOpen", { command = "startinsert", pattern = "*" })
 vim.api.nvim_create_autocmd("BufWinEnter", { command = "set noexpandtab tabstop=2 shiftwidth=2", pattern = "*.rs" })
 
-
+vim.o.clipboard = "unnamedplus"
+vim.opt.guifont = "Source Code Pro,Hack Nerd Font:h15"
