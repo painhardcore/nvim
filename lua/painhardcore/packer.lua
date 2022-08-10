@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'windwp/nvim-autopairs'
   use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+  use 'ThePrimeagen/git-worktree.nvim'
  end)
 
 
