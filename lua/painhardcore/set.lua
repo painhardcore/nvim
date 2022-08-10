@@ -47,3 +47,8 @@ vim.o.lazyredraw = true
 vim.o.scrolloff = 4
 vim.o.splitbelow = true
 vim.o.splitright = true
+
+vim.api.nvim_create_autocmd("InsertEnter", { command = "set norelativenumber", pattern = "*" })
+vim.api.nvim_create_autocmd("InsertLeave", { command = "set relativenumber", pattern = "*" })
+vim.api.nvim_create_autocmd("TermOpen", { command = "startinsert", pattern = "*" })
+vim.api.nvim_create_autocmd("BufWinEnter", { command = "set noexpandtab tabstop=2 shiftwidth=2", pattern = "*.rs" })
