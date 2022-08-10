@@ -37,3 +37,5 @@ nnoremap("<Leader>c", ":Commentary<CR>", { silent = true })
 vnoremap("<Leader>c", ":Commentary<CR>", { silent = true })
 -- tooggle to see if pointer to the problem spot is annoying
 nnoremap("<Leader>x", require("lsp_lines").toggle)
+-- find and replace on the cursor
+nnoremap("<Leader>sf",':%s/\\<<C-r><C-w>\\>//g<Left><Left>')
