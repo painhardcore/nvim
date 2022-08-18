@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["git-worktree.nvim"] = {
+    loaded = true,
+    path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
+    url = "https://github.com/ThePrimeagen/git-worktree.nvim"
+  },
   ["lsp_lines.nvim"] = {
     loaded = true,
     path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/lsp_lines.nvim",
@@ -184,10 +189,25 @@ _G.packer_plugins = {
     path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-dispatch"] = {
+    loaded = true,
+    path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-dispatch",
+    url = "https://github.com/tpope/vim-dispatch"
+  },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-makegreen"] = {
+    loaded = true,
+    path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-makegreen",
+    url = "https://github.com/reinh/vim-makegreen"
   },
   ["vim-rhubarb"] = {
     loaded = true,
@@ -198,6 +218,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-signify",
     url = "https://github.com/mhinz/vim-signify"
+  },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
   },
   ["vim-vsnip"] = {
     loaded = true,
