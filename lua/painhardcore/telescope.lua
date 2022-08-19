@@ -4,8 +4,9 @@ t.setup {
 		mappings = { n = { ["o"] = require("telescope.actions").select_default } },
 		initial_mode = "insert",
 		hidden = true,
-    path_display = { "smart"},
+    path_display = {"smart"},
 		file_ignore_patterns = { ".git/", "node_modules/", "vendor/" },
+    layout_config={ width=0.9},
 	},
 	extensions = { file_browser = { hidden = true } },
 }
