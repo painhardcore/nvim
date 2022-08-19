@@ -16,6 +16,7 @@ local setup_server = {
 		opts.settings = { Lua = { diagnostics = { globals = { "vim" } } } }
 	end,
     gopls = function(opts)
+        -- opts.cmd = {"gopls","serve","-remote=","auto"}
         opts.settings = {
             gopls = {
                 experimentalPostfixCompletions = true,
@@ -44,8 +45,8 @@ require("nvim-lsp-installer").on_server_ready(function(server)
 			vim.keymap.set("n", "<Leader>h", vim.lsp.buf.hover, opts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 			vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, opts)
-			vim.keymap.set("n", "<Leader>gi", vim.lsp.buf.implementation, opts)
-			vim.keymap.set("n", "<Leader>gr", vim.lsp.buf.references, opts)
+			-- vim.keymap.set("n", "<Leader>gi", vim.lsp.buf.implementation, opts)
+			-- vim.keymap.set("n", "<Leader>gr", vim.lsp.buf.references, opts)
       -- Set some keybinds conditional on server capabilities
       if client.resolved_capabilities.document_formatting then
         vim.keymap.set("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)

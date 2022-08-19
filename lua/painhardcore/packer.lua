@@ -42,5 +42,5 @@ return require('packer').startup(function(use)
   -- choose one and delete the other
   use 'voldikss/vim-floaterm'
   use 'tpope/vim-dispatch'
-  --
+
 end)

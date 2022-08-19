@@ -5,12 +5,16 @@ nnoremap("<leader>pv","<cmd>Ex<Cr>")
 
 -- telescope search
 nnoremap("<Leader>b",require('telescope').extensions.file_browser.file_browser)
-nnoremap("<Leader>t",require('telescope.builtin').treesitter)
+nnoremap("<Leader>e",require('telescope.builtin').treesitter)
 nnoremap("<Leader>f", require('telescope.builtin').find_files)
 nnoremap("<Leader>g", require('telescope.builtin').live_grep)
 nnoremap("<Leader>bb", require('telescope.builtin').buffers)
 nnoremap("<Leader>zz", require('telescope').extensions.git_worktree.git_worktrees)
 nnoremap("<Leader>z", require('telescope').extensions.git_worktree.create_git_worktree)
+-- telescope lsop
+nnoremap("<Leader>gi", require('telescope.builtin').lsp_implementations)
+nnoremap("<Leader>gr", require('telescope.builtin').lsp_references)
+
 -- splits
 nnoremap("<Leader>w", "<C-w>k")
 nnoremap("<Leader>a", "<C-w>h")
@@ -41,4 +45,5 @@ vnoremap("<Leader>c", ":Commentary<CR>", { silent = true })
 nnoremap("<Leader>x", require("lsp_lines").toggle)
 -- find and replace on the cursor
 nnoremap("<Leader>sf",':%s/\\<<C-r><C-w>\\>//g<Left><Left>')
-
+nnoremap("<Leader>t",":TestNearest<CR>")
+nnoremap("<Leader>T",":TestFile<CR>")

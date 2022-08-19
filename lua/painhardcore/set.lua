@@ -55,3 +55,4 @@ vim.api.nvim_create_autocmd("BufWinEnter", { command = "set noexpandtab tabstop=
 
 vim.o.clipboard = "unnamedplus"
 vim.opt.guifont = "Source Code Pro,Hack Nerd Font:h15"
+vim.g["test#strategy"] =  "dispatch"

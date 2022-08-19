@@ -204,11 +204,6 @@ _G.packer_plugins = {
     path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-makegreen"] = {
-    loaded = true,
-    path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-makegreen",
-    url = "https://github.com/reinh/vim-makegreen"
-  },
   ["vim-rhubarb"] = {
     loaded = true,
     path = "/Users/kotey/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
