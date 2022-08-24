@@ -25,6 +25,7 @@ local setup_server = {
                     shadow = true,
                 },
                 staticcheck = true,
+                gofumpt = true
             },
         }
         opts.init_options = {
