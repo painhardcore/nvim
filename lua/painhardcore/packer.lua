@@ -43,4 +43,5 @@ return require('packer').startup(function(use)
   use 'voldikss/vim-floaterm'
   use 'tpope/vim-dispatch'
 
+  use 'brooth/far.vim'
 end)
