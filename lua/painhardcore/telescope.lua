@@ -6,7 +6,7 @@ t.setup {
 		hidden = false,
     path_display = {"smart"},
 		file_ignore_patterns = { ".git/", "node_modules/", "vendor/" },
-    layout_config={ width=0.9},
+    layout_config={ width=0.99},
 	},
 	extensions = { file_browser = { hidden = true } },
 }
