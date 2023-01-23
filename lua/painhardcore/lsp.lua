@@ -2,6 +2,7 @@ local servers = {
 	"bashls",
 	"gopls",
 	"sumneko_lua",
+  "zls",
 }
 for _, name in pairs(servers) do
 	local found, server = require("nvim-lsp-installer").get_server(name)
@@ -25,7 +26,7 @@ local setup_server = {
                     shadow = true,
                 },
                 staticcheck = true,
-                gofumpt = true
+                gofumpt = true,
             },
         }
         opts.init_options = {
@@ -35,7 +36,7 @@ local setup_server = {
 }
 
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()) --nvim-cmp
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require("nvim-lsp-installer").on_server_ready(function(server)
@@ -46,16 +47,16 @@ require("nvim-lsp-installer").on_server_ready(function(server)
 			vim.keymap.set("n", "<Leader>h", vim.lsp.buf.hover, opts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 			vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, opts)
-			-- vim.keymap.set("n", "<Leader>gi", vim.lsp.buf.implementation, opts)
-			-- vim.keymap.set("n", "<Leader>gr", vim.lsp.buf.references, opts)
+			vim.keymap.set("n", "<Leader>gi", vim.lsp.buf.implementation, opts)
+			vim.keymap.set("n", "<Leader>gr", vim.lsp.buf.references, opts)
       -- Set some keybinds conditional on server capabilities
-      if client.resolved_capabilities.document_formatting then
+      if client.server_capabilities.documentFormattingProvider then
         vim.keymap.set("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-      elseif client.resolved_capabilities.document_range_formatting then
+      elseif client.server_capabilities.documentRangeFormattingProvider then
         vim.keymap.set("n", "ff", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
       end
       -- Set autocommands conditional on server_capabilities
-      if client.resolved_capabilities.document_highlight then
+      if client.server_capabilities.documentHighlightProvider then
         vim.api.nvim_exec([[
           augroup lsp_document_highlight
             autocmd! * <buffer>

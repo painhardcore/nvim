@@ -1,3 +1,4 @@
+require('painhardcore.packer')
 require('painhardcore.set')
 require('painhardcore.remap')
 require('painhardcore.ui')
