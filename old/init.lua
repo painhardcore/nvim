@@ -1,0 +1,11 @@
+require('painhardcore.packer')
+require('painhardcore.set')
+require('painhardcore.remap')
+require('painhardcore.ui')
+require('painhardcore.dashboard')
+require('painhardcore.telescope')
+require('painhardcore.treesitter')
+require('painhardcore.cmp')
+require('painhardcore.setup')
+require('painhardcore.lsp')
+
