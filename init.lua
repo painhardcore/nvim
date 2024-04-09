@@ -265,7 +265,7 @@ require("lazy").setup({
 				--  All the info you're looking for is in `:help telescope.setup()`
 				--
 				path_display = { "smart" },
-				file_ignore_patterns = { ".git/", "node_modules/", "vendor/" },
+				file_ignore_patterns = { ".git/", "node_modules/" },
 				layout_config = { width = 1 },
 				-- pickers = {}
 				extensions = {
