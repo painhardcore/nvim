@@ -234,7 +234,7 @@ require("lazy").setup({
 				end,
 			},
 			{ "nvim-telescope/telescope-ui-select.nvim" },
-
+			{ "nvim-telescope/telescope-file-browser.nvim" },
 			-- Useful for getting pretty icons, but requires a Nerd Font.
 			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 		},
@@ -264,25 +264,26 @@ require("lazy").setup({
 				-- You can put your default mappings / updates / etc. in here
 				--  All the info you're looking for is in `:help telescope.setup()`
 				--
-				-- defaults = {
-				--   mappings = {
-				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-				--   },
-				-- },
+				path_display = { "smart" },
+				file_ignore_patterns = { ".git/", "node_modules/", "vendor/" },
+				layout_config = { width = 1 },
 				-- pickers = {}
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
 					},
+					file_browser = { hidden = true },
 				},
 			})
 
 			-- Enable Telescope extensions if they are installed
 			pcall(require("telescope").load_extension, "fzf")
 			pcall(require("telescope").load_extension, "ui-select")
+			pcall(require("telescope").load_extension, "file_browser")
 
 			-- See `:help telescope.builtin`
 			local builtin = require("telescope.builtin")
+			local ext = require("telescope").extensions
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
@@ -293,6 +294,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 			vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+			vim.keymap.set("n", "<leader>b", ext.file_browser.file_browser, { desc = "File [B]rowser" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
