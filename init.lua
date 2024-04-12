@@ -266,13 +266,14 @@ require("lazy").setup({
 				--
 				path_display = { "smart" },
 				file_ignore_patterns = { ".git/", "node_modules/" },
-				layout_config = { width = 1 },
+				layout_config = { width = 0.99 },
+				horizontal = { width = 0.99 },
 				-- pickers = {}
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
 					},
-					file_browser = { hidden = true },
+					file_browser = { hidden = true, hijack_netrw = true },
 				},
 			})
 
@@ -280,6 +281,7 @@ require("lazy").setup({
 			pcall(require("telescope").load_extension, "fzf")
 			pcall(require("telescope").load_extension, "ui-select")
 			pcall(require("telescope").load_extension, "file_browser")
+			pcall(require("telescope").load_extension, "git_worktree")
 
 			-- See `:help telescope.builtin`
 			local builtin = require("telescope.builtin")
@@ -296,6 +298,8 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 			vim.keymap.set("n", "<leader>b", ext.file_browser.file_browser, { desc = "File [B]rowser" })
 
+			vim.keymap.set("n", "<Leader>zz", ext.git_worktree.git_worktrees, { desc = "Show worktrees" })
+			vim.keymap.set("n", "<Leader>za", ext.git_worktree.create_git_worktreee, { desc = "Create worktree" })
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
 				-- You can pass additional configuration to Telescope to change the theme, layout, etc.
@@ -757,6 +761,7 @@ require("lazy").setup({
 	{
 		"tpope/vim-fugitive",
 	},
+	{ "ThePrimeagen/git-worktree.nvim" },
 	-- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
 	-- place them in the correct locations.
